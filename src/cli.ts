@@ -82,6 +82,7 @@ function setAzurePipelinesBuildVersion(version: BuildVersionInfo): void {
   setOutputVariable('ShortSha', version.shortSha);
   setOutputVariable('CommitDate', version.commitDate.toISOString());
   setOutputVariable('CommitsSinceVersionSource', version.commitsSinceVersionSource.toString());
+  setOutputVariable('SemVer', buildNumber);
 
   console.log(`##vso[build.updatebuildnumber]${buildNumber}`);
 }
